@@ -1,0 +1,17 @@
+name: Run Shell Script
+
+on: [push, pull_request]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Give execute permission to scripts
+        run: chmod +x *.sh
+
+      - name: Run performance stats script
+        run: ./server-stats.sh  # Thay thế bằng tên file script của bạn

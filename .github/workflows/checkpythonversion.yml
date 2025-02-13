@@ -1,2 +1,14 @@
+name: Check Python Version
+
+on: [push, pull_request]
+
+jobs:
+  check-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Kiểm tra Python version
         run: python --version
